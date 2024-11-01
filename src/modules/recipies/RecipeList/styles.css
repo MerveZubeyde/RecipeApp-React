@@ -1,0 +1,43 @@
+:root {
+    --brick-dark: #793E37;
+    --brick-mid: #974E44;
+    --brick-light: #B55D51;
+    --pinkish: #fff0ffED;
+    --grey-dark: #4C4C4C;
+    --grey-mid: #878787;
+    --grey-light: #A5A5A5;
+    --greyish: #EBEBEB;
+    --white: #FFFFFF;
+    --Black: #0D0000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.items {
+    font-size: 1.4rem;
+    margin: 20px;
+    padding-left: 40px;
+}
+
+.items:hover {
+    font-weight: bold;
+    color: var(--brick-mid);
+}
+
+.recipes-list {
+    width: 100%;
+    max-width: 700px;
+    list-style: none;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.recipes-list:hover {
+    cursor: pointer;
+
+
+}
