@@ -1,14 +1,14 @@
 :root {
-    --brick-dark: #793E37;
-    --brick-mid: #974E44;
-    --brick-light: #B55D51;
-    --pinkish: #fff0ffED;
-    --grey-dark: #4C4C4C;
+    --brick-dark: #793e37;
+    --brick-mid: #974e44;
+    --brick-light: #b55d51;
+    --pinkish: #fff0ffed;
+    --grey-dark: #4c4c4c;
     --grey-mid: #878787;
-    --grey-light: #A5A5A5;
-    --greyish: #EBEBEB;
-    --white: #FFFFFF;
-    --Black: #0D0000;
+    --grey-light: #a5a5a5;
+    --greyish: #ebebeb;
+    --white: #ffffff;
+    --black: #0d0000;
 }
 
 * {
@@ -18,19 +18,17 @@
 }
 
 .App {
-    background-color: var(--red);
+    background-color: var(--white);
     max-width: 80%;
     max-height: max-content;
     margin: 0 auto;
     padding: 10px;
     margin-top: 30px;
     border-radius: 10px;
-    ;
 }
 
 .container {
     width: 100%;
-    max-width: 700px;
     background-color: var(--greyish);
     box-shadow: 15px 15px 0 15px var(--pinkish), 5px 5px 0 15px var(--brick-light);
     display: flex;
@@ -39,7 +37,6 @@
     align-items: center;
     margin: 0 auto;
     margin-top: 40px;
-    border-radius: 10px;
 }
 
 .recipe-detail.full-page {
@@ -96,9 +93,12 @@
 
 .selected-img {
     width: 100%;
-    max-width: 700px;
     height: auto;
     margin-bottom: 50px;
-    border-radius: 15px;
     box-shadow: 15px 15px 0 15px var(--pinkish), 5px 5px 0 15px var(--brick-light);
+}
+
+.box {
+    max-width: 700px;
+    border-radius: 10px;
 }

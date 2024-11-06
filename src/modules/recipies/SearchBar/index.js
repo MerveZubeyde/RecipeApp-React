@@ -2,7 +2,6 @@ import { useState } from "react"
 import './styles.css';
 
 export const SearchBar = ({ onSearch }) => {
-    // TODO: add input to search recipes>
     const [searchLetter, setSearchLetter] = useState('');
 
     const handleInputChange = (e) => {
@@ -22,7 +21,7 @@ export const SearchBar = ({ onSearch }) => {
             <input
                 className="input"
                 type="text"
-                placeholder="Egg Benedict..."
+                placeholder="E..."
                 value={searchLetter}
                 onChange={handleInputChange}
                 maxLength={1}
