@@ -1,0 +1,39 @@
+.search-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding-top: 30px;
+}
+
+.input,
+.btn {
+    font-size: 1.3rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.input {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: var(--grey-light);
+    color: var(--white);
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--grey-mid);
+    color: var(--pinkish);
+    font-weight: 700;
+}
+
+.line-hero {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    color: var(--brick-dark);
+}
