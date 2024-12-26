@@ -31,6 +31,9 @@ export const SearchBar = () => {
       <div className="container">
         <h1 className="search-heading">Search for Recipes</h1>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="search-input" className="search-label">
+            Enter a single letter to search for recipes:
+          </label>
           <input
             type="text"
             placeholder="Enter a letter..."
@@ -52,6 +55,7 @@ export const SearchBar = () => {
             </button>
           ))}
         </div>
-      </div></>
+      </div>
+    </>
   );
 };

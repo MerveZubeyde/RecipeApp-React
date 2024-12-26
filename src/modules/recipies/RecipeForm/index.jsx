@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useUser } from "../../../UserContext";
+import { useUser } from "../../users/UserContext";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 

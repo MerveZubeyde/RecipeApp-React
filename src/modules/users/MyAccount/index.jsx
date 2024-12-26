@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useUser } from "../../../UserContext";
+import { useUser } from "../UserContext";
 import "./styles.css";
 
 export const UserSettings = () => {
@@ -74,17 +74,6 @@ export const UserSettings = () => {
         Save
       </button>
     )}
-  
-    <h3>Favorite Recipes</h3>
-    <ul className="userdetails-list">
-      {userDetails.favoriteRecipes?.length > 0 ? (
-        userDetails.favoriteRecipes.map((recipe) => (
-          <li className="userdetails-listitem" key={recipe.idMeal}>{recipe.strMeal}</li>
-        ))
-      ) : (
-        <p>No favorite recipes.</p>
-      )}
-    </ul>
   
     <h3>My Added Recipes</h3>
     <ul className="userdetails-list">

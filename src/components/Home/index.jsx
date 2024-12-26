@@ -1,5 +1,5 @@
 import React from "react";
-import { useUser } from "../../UserContext";
+import { useUser } from "../../modules/users/UserContext";
 import { Navigate } from "react-router-dom";
 
 export const Home = () => {

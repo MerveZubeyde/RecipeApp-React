@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useUser } from "./UserContext";
+import { useUser } from "./modules/users/UserContext";
 
 export const ProtectedRoute = ({ children }) => {
   const { isLoggedIn } = useUser();

@@ -30,23 +30,23 @@ export const UserProvider = ({ children }) => {
     setUserDetails(null);
   };
 
-  const addFavoriteRecipe = (recipe) => {
+  const addFavoriteRecipe = (recipeId) => {
     setUserDetails((prevDetails) => ({
       ...prevDetails,
       favoriteRecipes: prevDetails.favoriteRecipes
-        ? [...prevDetails.favoriteRecipes, recipe]
-        : [recipe],
-    }))
+        ? [...new Set([...prevDetails.favoriteRecipes, recipeId])]
+        : [recipeId],
+    }));
   };
 
-  const addMyRecipe = (recipe) => {
+  const addMyRecipe = (recipeId) => {
     setUserDetails((prevDetails) => ({
       ...prevDetails,
       myRecipes: prevDetails.myRecipes
-        ? [...prevDetails.myRecipes, recipe]
-        : [recipe],
-    }))
-  }
+        ? [...new Set([...prevDetails.myRecipes, recipeId])]
+        : [recipeId],
+    }));
+  };
 
   return (
     <UserContext.Provider

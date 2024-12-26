@@ -9,6 +9,7 @@
   --greyish: #ebebeb;
   --white: #ffffff;
   --black: #0d0000;
+  --danger-red: #880101;
 }
 
 * {
@@ -18,6 +19,8 @@
 }
 
 h1 {
+  align-self: center;
+  margin: 0 auto;
   font-size: 2.2rem;
   letter-spacing: 0.1rem;
   color: var(--brick-light);
@@ -34,7 +37,42 @@ h3 {
   color: var(--grey-dark);
   margin-top: 20px;
 }
+.entry-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
 
+.entry-form{
+  display: flex;
+  justify-content: flex-start; 
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-top: 50px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;  
+  margin-bottom: 15px; 
+  width: 100%; 
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--grey-dark);
+  margin-bottom: 10px; 
+}
+.form-group input {
+  padding: 12px;
+  border: 1px solid var(--greyish);
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%; 
+}
 .back-btn {
   padding: 10px 20px;
   background-color: var(--brick-light);
@@ -57,17 +95,19 @@ h3 {
 
 .entry-btn,
 .search-btn {
-  width: 70%;
-  padding: 8px 10px;
-  margin-top: 10PX;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: var(--grey-light);
-  color: var(--white);
-  font-weight: 700;
-  border: 1px solid var(--grey-light);
-}
+    width: 100%; 
+    align-self: stretch; 
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--grey-light);
+    color: var(--white);
+    font-weight: 700;
+    border: 1px solid var(--grey-light);
+  }
+
 
 .entry-btn:hover {
   transition: background-color 0.3s ease;
@@ -81,12 +121,12 @@ h3 {
   border: 1px solid var(--brick-light);
 }
 
-input {
-  width: 70%;
-  padding: 8px 10px;
-  font-size: 16px;
-  border-radius: 5px;
+.container input {
+  width: 100%; 
+  align-self: stretch; 
   margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 5px;
 }
 
 .container {
@@ -100,6 +140,12 @@ input {
   border-radius: 5px;
   width: 90%;
   max-width: 1200px;
+}
+.error-message {
+  display: block;
+  color: var(--danger-red);
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 @media (max-width: 768px) {
@@ -133,11 +179,14 @@ input {
 
   .entry-btn,
   .search-btn {
-    width: 80%;
+    width: 50%;
     font-size: 0.9rem;
     padding: 8px;
   }
 
+  .form-group {
+    width: 80%; 
+  }
   input {
     width: 80%;
     font-size: 14px;
