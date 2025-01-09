@@ -25,6 +25,44 @@
 .textarea form-element {
     min-height: 150px;
     resize: vertical;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.ingredient-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ingredient_form-element {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid var(--greyish);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-box,
+.checkbox {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-btn,
+.remove-btn {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--grey-light);
+    cursor: pointer;
 }
 
 .button form-element {
@@ -35,8 +73,9 @@
     font-size: 1rem;
 }
 
-.button form-element:hover {
-    background-color: var(--brick-light);
+.form-element:hover {
+    background-color: var(--white);
+    color: var(--brick-light);
 }
 
 @media (max-width: 768px) {
