@@ -1,0 +1,119 @@
+.main-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.recipe-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 800px;
+  background-color: var(--greyish);
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 4px 10px var(--black);
+}
+
+.recipe-title {
+  font-size: 2rem;
+  color: var(--grey-dark);
+  margin: 30px 0;
+  text-align: center;
+}
+
+.recipe-img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.recipe-instructions {
+  font-size: 1rem;
+  color: var(--grey-dark);
+  text-align: justify;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px var(--greyish);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: var(--brick-light);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--brick-mid);
+  color: var(--white);
+}
+
+.fav-btn {
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+.back-btn {
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .recipe-details-container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .recipe-title {
+    font-size: 1.5rem;
+  }
+
+  .recipe-img {
+    max-height: 300px;
+  }
+
+  .recipe-instructions {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
