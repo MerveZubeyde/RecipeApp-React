@@ -1,27 +1,35 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './styles.css';
+import "./styles.css";
 
 export const SearchBar = () => {
-  const [searchLetter, setSearchLetter] = useState('');
+  const [searchLetter, setSearchLetter] = useState("");
   const navigate = useNavigate();
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  const handleSubmit = (e) => {
+  interface HandleSubmit {
+    (e: React.FormEvent<HTMLFormElement>): void;
+  }
+
+  const handleSubmit: HandleSubmit = (e) => {
     e.preventDefault();
     if (searchLetter.length === 1) {
       navigate(`/recipes?search=${searchLetter}`);
     }
   };
 
-  const handleLetterClick = (letter) => {
+  interface HandleLetterClick {
+    (letter: string): void;
+  }
+
+  const handleLetterClick: HandleLetterClick = (letter) => {
     setSearchLetter(letter);
     navigate(`/recipes?search=${letter}`);
   };
 
   const handleBackButton = () => {
     navigate(-1);
-  }
+  };
 
   return (
     <>
@@ -41,9 +49,10 @@ export const SearchBar = () => {
             onChange={(e) => setSearchLetter(e.target.value.toUpperCase())}
             maxLength={1}
           />
-          <button className="search-btn" type="submit">Search</button>
+          <button className="search-btn" type="submit">
+            Search
+          </button>
         </form>
-
         <div className="alphabet">
           {alphabet.map((letter) => (
             <button

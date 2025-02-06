@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dataUsers } from "../UserData";
-import './../../../App.css';
+import "./../../../App.css";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
@@ -9,7 +9,11 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [validationError, setValidationError] = useState({ username: "", email: "", password: "" });
+  const [validationError, setValidationError] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
 
   const validateInputs = () => {
@@ -32,14 +36,20 @@ export const Register = () => {
     return isValid;
   };
 
-  const handleRegister = (e) => {
+  interface User {
+    username: string;
+    password: string;
+    email: string;
+  }
+
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateInputs()) {
       return;
     }
 
     const userExists = dataUsers.some(
-      (user) => user.username === username || user.email === email
+      (user: User) => user.username === username || user.email === email
     );
 
     if (userExists) {
@@ -47,7 +57,14 @@ export const Register = () => {
       return;
     }
 
-    dataUsers.push({ username, password, email });
+    dataUsers.push({
+      id: dataUsers.length + 1,
+      username,
+      password,
+      email,
+      role: "user",
+      addedRecipes: [],
+    });
     setSuccess("Registration successful! Redirecting to login...");
     setError("");
 
@@ -71,10 +88,12 @@ export const Register = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          {validationError.username && <p className="error-message">{validationError.username}</p>}
+          {validationError.username && (
+            <p className="error-message">{validationError.username}</p>
+          )}
         </div>
-        <div className="form-group" >
-          <label  htmlFor="email">Email</label>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
           <input
             id="email"
             type="email"
@@ -82,9 +101,11 @@ export const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          {validationError.email && <p className="error-message">{validationError.email}</p>}
+          {validationError.email && (
+            <p className="error-message">{validationError.email}</p>
+          )}
         </div>
-        <div className="form-group" >
+        <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
             id="password"
@@ -93,9 +114,13 @@ export const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {validationError.password && <p className="error-message">{validationError.password}</p>}
+          {validationError.password && (
+            <p className="error-message">{validationError.password}</p>
+          )}
         </div>
-        <button className="entry-btn" type="submit">Register</button>
+        <button className="entry-btn" type="submit">
+          Register
+        </button>
       </form>
     </div>
   );

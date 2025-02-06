@@ -4,7 +4,10 @@ import { useUser } from "../../modules/users/UserContext";
 import "./styles.css";
 
 export const Navbar = () => {
-  const { isLoggedIn, logout } = useUser();
+  const { isLoggedIn, logout } = useUser() as {
+    isLoggedIn: boolean;
+    logout: () => void;
+  };
   const navigate = useNavigate();
 
   const handleLogout = () => {

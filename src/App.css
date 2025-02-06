@@ -10,72 +10,86 @@
   --white: #ffffff;
   --black: #0d0000;
   --danger-red: #880101;
+  --primary-font: "Arial", sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: var(--primary-font);
 }
 
 h1 {
   align-self: center;
   margin: 0 auto;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   letter-spacing: 0.1rem;
   color: var(--brick-light);
   margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  text-align: center;
   color: var(--brick-light);
+  margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 1.2rem;
-  color: var(--grey-dark);
+  font-size: 1.4rem;
   margin-top: 20px;
+  color: var(--grey-dark);
 }
-.entry-container{
+.entry-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0 auto;
+  padding: 20px;
 }
 .entry-container h1 {
   margin: 50px auto;
 }
 
-.entry-form{
+.entry-form {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .form-group {
   display: flex;
-  flex-direction: column;  
-  margin-bottom: 15px; 
-  width: 100%; 
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .form-group label {
   font-size: 16px;
   font-weight: 600;
   color: var(--grey-dark);
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
-.form-group input {
+.form-group input,
+.form-group select,
+.form-group textarea {
   padding: 12px;
   border: 1px solid var(--greyish);
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 14px;
-  width: 100%; 
+  width: 100%;
+  transition: border-color 0.3s ease;
 }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--brick-light);
+  outline: none;
+}
+
 .back-btn {
   padding: 10px 20px;
   background-color: var(--brick-light);
@@ -98,35 +112,26 @@ h3 {
 
 .entry-btn,
 .search-btn {
-    width: 100%; 
-    align-self: stretch; 
-    margin-top: 10px;
-    padding: 8px 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: var(--grey-light);
-    color: var(--white);
-    font-weight: 700;
-    border: 1px solid var(--grey-light);
-  }
-
-
-.entry-btn:hover {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: var(--grey-light);
+  color: var(--white);
+  font-weight: 700;
+  border: none;
   transition: background-color 0.3s ease;
-  background-color: var(--brick-light);
-  border: 1px solid var(--brick-light);
 }
 
+.entry-btn:hover,
 .search-btn:hover {
-  transition: background-color 0.3s ease;
   background-color: var(--brick-light);
-  border: 1px solid var(--brick-light);
 }
 
 .container input {
-  width: 100%; 
-  align-self: stretch; 
+  width: 100%;
+  align-self: stretch;
   margin-top: 10px;
   padding: 8px 10px;
   border-radius: 5px;
@@ -148,7 +153,7 @@ h3 {
   display: block;
   color: var(--danger-red);
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .memo {
   display: block;
@@ -157,53 +162,11 @@ h3 {
   font-weight: bold;
   margin: 50px 30px;
 }
-
-@media (max-width: 768px) {
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  .back-btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-    background-color: var(--brick-light);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-    margin-top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-  }
-
-  .entry-btn,
-  .search-btn {
-    width: 50%;
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .form-group {
-    width: 80%; 
-  }
-  input {
-    width: 80%;
-    font-size: 14px;
-  }
-
-  .container {
-    margin: 20px auto;
-    padding: 30px;
-  }
+input[type="file"] {
+  padding: 12px;
+  border: 1px solid var(--greyish);
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
 }

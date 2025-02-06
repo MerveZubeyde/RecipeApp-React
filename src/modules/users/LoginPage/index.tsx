@@ -8,7 +8,10 @@ export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [validationError, setValidationError] = useState({ username: "", password: "" });
+  const [validationError, setValidationError] = useState({
+    username: "",
+    password: "",
+  });
 
   const validateInputs = () => {
     let isValid = true;
@@ -26,7 +29,7 @@ export const Login = () => {
     return isValid;
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateInputs()) {
       return;
@@ -53,7 +56,9 @@ export const Login = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          {validationError.username && <p className="error-message">{validationError.username}</p>}
+          {validationError.username && (
+            <p className="error-message">{validationError.username}</p>
+          )}
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
@@ -64,10 +69,14 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {validationError.password && <p className="error-message">{validationError.password}</p>}
+          {validationError.password && (
+            <p className="error-message">{validationError.password}</p>
+          )}
         </div>
         {error && <p>{error}</p>}
-        <button className="entry-btn" type="submit">Login</button>
+        <button className="entry-btn" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

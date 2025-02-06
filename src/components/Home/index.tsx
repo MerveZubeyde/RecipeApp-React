@@ -2,7 +2,7 @@ import React from "react";
 import { useUser } from "../../modules/users/UserContext";
 import { Navigate } from "react-router-dom";
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const { isLoggedIn, userDetails } = useUser();
 
   if (!isLoggedIn) {
