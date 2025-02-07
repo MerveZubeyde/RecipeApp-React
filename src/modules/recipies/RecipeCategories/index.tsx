@@ -2,15 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../recipiesService";
 import "./styles.css";
+import { CategoryDetails } from "../interfaces";
+import { Category } from "../enum";
 
 export const RecipeCategories = () => {
-  interface Category {
-    idCategory: string;
-    strCategory: string;
-    strCategoryThumb: string;
-  }
-
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<CategoryDetails[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +17,7 @@ export const RecipeCategories = () => {
     getCategories();
   }, []);
 
-  const handleCategoryClick = (categoryName: string) => {
+  const handleCategoryClick = (categoryName: Category) => {
     navigate(`/recipes?category=${categoryName}`);
   };
   const handleBackButton = () => {

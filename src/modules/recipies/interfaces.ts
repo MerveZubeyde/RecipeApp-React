@@ -1,3 +1,5 @@
+import { Category } from "./enum";
+
 export interface Recipe {
   idMeal: string;
   strMeal: string;
@@ -65,3 +67,11 @@ export interface Meal {
   strInstructions?: string;
   strMealThumb?: string;
 }
+
+
+export interface CategoryDetails {
+  idCategory: string;
+  strCategory: Category;
+  strCategoryThumb: string;
+}
+

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useUser } from "../UserContext";
 import "./styles.css";
 
-interface UserDetails {
+interface UserFormData {
   username: string;
   email: string;
   password: string;
@@ -11,7 +11,7 @@ interface UserDetails {
 
 export const UserSettings = () => {
   const { userDetails } = useUser();
-  const [editingField, setEditingField] = useState<keyof UserDetails | null>(
+  const [editingField, setEditingField] = useState<keyof UserFormData | null>(
     null
   );
   const [tempValue, setTempValue] = useState("");
@@ -20,9 +20,9 @@ export const UserSettings = () => {
     return <div className="user-settings-container">No recipes added.</div>;
   }
 
-  const handleEditClick = (field: keyof UserDetails) => {
+  const handleEditClick = (field: keyof UserFormData) => {
     setEditingField(field);
-    setTempValue((userDetails as UserDetails)[field] as string);
+    setTempValue((userDetails as UserFormData)[field] as string);
   };
 
   const handleSaveClick = () => {
@@ -32,7 +32,7 @@ export const UserSettings = () => {
         editingField === "email" ||
         editingField === "password"
       ) {
-        (userDetails as UserDetails)[editingField] = tempValue;
+        (userDetails as UserFormData)[editingField] = tempValue;
       }
     }
     setEditingField(null);
