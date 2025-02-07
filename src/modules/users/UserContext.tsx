@@ -1,26 +1,11 @@
 import React, { createContext, useState, useContext, ReactNode } from "react";
 import { dataUsers } from "./UserData";
+import { UserContextData } from "./interfaces";
 
-interface User {
-  id: number;
-  username: string;
-  password: string;
-  role: string;
-  email: string;
-}
-
-interface UserDetails {
-  id: number;
-  username: string;
-  password: string;
-  role: string;
-  email: string;
-  addedRecipes: { idMeal: string; strMeal: string }[];
-}
 
 interface UserContextType {
   isLoggedIn: boolean;
-  userDetails: UserDetails | null;
+  userDetails: UserContextData | null;
   login: (username: string, password: string) => boolean;
   logout: () => void;
 }
@@ -44,7 +29,7 @@ interface UserProviderProps {
 
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const [userDetails, setUserDetails] = useState<UserContextData | null>(null);
 
   const login = (username: string, password: string): boolean => {
     const someUser = dataUsers.find(

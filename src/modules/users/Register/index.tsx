@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dataUsers } from "../UserData";
 import "./../../../App.css";
+import { User } from "../interfaces";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
@@ -35,12 +36,6 @@ export const Register = () => {
     setValidationError(errors);
     return isValid;
   };
-
-  interface User {
-    username: string;
-    password: string;
-    email: string;
-  }
 
   const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
